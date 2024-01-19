@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>21</java.version>
-        <ebean.version>13.11.0</ebean.version>
+        <ebean.version>13.25.0</ebean.version>
     </properties>
     <dependencies>
         <dependency>
