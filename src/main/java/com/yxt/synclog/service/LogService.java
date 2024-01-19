@@ -1,9 +1,9 @@
-package com.yxt.syncLog.service;
+package com.yxt.synclog.service;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.json.JSONUtil;
-import com.yxt.syncLog.domain.FlowLog;
-import com.yxt.syncLog.domain.Log;
+import com.yxt.synclog.domain.FlowLog;
+import com.yxt.synclog.domain.Log;
 import io.ebean.DB;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;

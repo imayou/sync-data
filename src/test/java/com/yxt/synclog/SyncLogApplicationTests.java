@@ -1,4 +1,4 @@
-package com.yxt.syncLog;
+package com.yxt.synclog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

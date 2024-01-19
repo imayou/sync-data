@@ -1,18 +1,23 @@
-package com.yxt.syncLog.domain;
+package com.yxt.synclog.domain;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.bean.copier.CopyOptions;
+import io.ebean.Model;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Document(value = "data_http_log")
-public class Log implements Serializable {
+@Entity
+@Table(name = "sys_mis_request_log")
+public class FlowLog extends Model implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -53,4 +58,12 @@ public class Log implements Serializable {
 
     @Column(name = "bid")
     private String bid;
+
+    public void copy(FlowLog source) {
+        BeanUtil.copyProperties(source, this, CopyOptions.create().setIgnoreNullValue(true));
+    }
+
+    public FlowLog re() {
+        return BeanUtil.copyProperties(this, FlowLog.class);
+    }
 }
