@@ -31,10 +31,11 @@ db.createUser({user:"log",pwd:"123456",roles:[{role:"dbOwner",db:"http_log"}]})
 
 #项目运行创建data_http_log表
 
-#查询
+#查询 https://www.runoob.com/mongodb/mongodb-query.html
 db.data_http_log.find()
 
-#正则模糊查询
-db.data_http_log.findOne({"response":/chNo/})
+#正则模糊查询 
+db.data_http_log.find({"method":/异常/}).sort({_id:-1})
+
 ```
 
