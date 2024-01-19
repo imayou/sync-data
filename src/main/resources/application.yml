@@ -1,0 +1,42 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+spring:
+  application:
+    name: sync-service
+  threads:
+    virtual:
+      enabled: true
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: http_log
+      username: "log"
+      password: "123456"
+logging:
+  level:
+    io:
+      ebean:
+        SQL: DEBUG
+
+#需要安装插件 https://ebean.io/docs/getting-started/intellij-idea
+ebean:
+  logging:
+    query: true #show sql need debug level
+  dbSchema: dataDirect  # use this schema rather than public
+  migration:
+    run: true
+# Database otherDatabase = DB.byName("db");
+datasource:
+  db:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/data_direct?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+  mysql:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/data_direct?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
