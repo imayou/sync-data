@@ -39,3 +39,11 @@ db.data_http_log.find({"method":/异常/}).sort({_id:-1})
 
 ```
 
+#### gemini
+```
+gemini:
+  api-key: yourkey
+  proxy-host: 127.0.0.1
+  proxy-port: 7890
+```
+
